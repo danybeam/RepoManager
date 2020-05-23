@@ -1,0 +1,25 @@
+name: Generate release
+
+on:
+  push:
+    branches:
+      - master
+    tags-ignore:
+      - "**"
+
+jobs:
+  tag_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout latest
+        uses: actions/checkout@v2
+      - name: Generate documentation
+        run: <#GENERATE DOCUMENTATION COMMAND#>
+      - name: Push documentation
+        uses: mikeal/publish-to-github-action@master
+      - name: tag release
+        uses: butlerlogic/action-autotag@stable
+        with:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          root: <#PATH TO FILE#>
+          regex_pattern: <#REGEX PATTERN#>

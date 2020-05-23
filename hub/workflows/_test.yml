@@ -1,0 +1,28 @@
+name: "<#LANGUAGE#> Test run"
+
+on:
+  push:
+    branches:
+      - "hotfix/*"
+      - "bugfix/*"
+      - "feature/*/test"
+    tags-ignore:
+      - "no-test"
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: <#INSTALL DEPENDENCIES COMMAND#>
+      - name: Run tests
+        run: <#RUN TEST COMMAND#>

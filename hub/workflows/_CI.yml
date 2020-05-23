@@ -1,0 +1,46 @@
+name: <#LANGUAGE#> CI
+
+on:
+  push:
+    branches:
+      - "master"
+      - "release/*"
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    container:
+      image: google/dart:latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Verify Version got bumped in README badge and pubspec
+        id: changed
+        uses: foodee/pr-includes-file-change@master
+        with:
+          paths: <#VERSION FILE#>
+      - name: Abort if not match
+        if: steps.changed.outputs.matched != 'true'
+        run: exit 1
+      - name: Get dependencies
+        run: <#INSTALL DEPENDENCIES COMMAND#>
+      - name: Run tests
+        run: <#RUN TEST COMMAND#>
+      - name: generate coverage data
+        run: <#COVERAGE DATA COMMAND#>
+      - name: generate coverage badge
+        run: <#COVERAGE BADGE COMMAND#>
+      - name: update coverage badge
+        uses: mikeal/publish-to-github-action@master
