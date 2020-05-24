@@ -1,6 +1,6 @@
 # Project initializer in python
 
-![License GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue) ![Version 0.1.0-alfa](https://img.shields.io/badge/Version-0.1.0.alfa-important) ![<#LANGUAGE#> CI]() ![Coverage]()
+![License GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue) ![Version 0.1.0-alfa](https://img.shields.io/badge/Version-0.1.0.alfa-important) ![Python CI](https://img.shields.io/badge/Python_CI-none_yet-important) ![Coverage](https://img.shields.io/badge/Coverage-none_yet-important)
 
 ## Description
 
@@ -11,8 +11,12 @@ this by dessign will be an ever evolving project please feel free to propose cha
 
 ## License & Attribution
 
-This project is available under <#LICENSE#>.  
-the <#LICENSE#> means <#LIBERTIES AND RESPONSABILITIES#> [Check it out](LICENSE) for more details
+This project is available under GNU General Public License version 3.  
+the GNU General Public License version 3 means Use it comercially, distributing and modifying for both personal and patent use
+  If you use this code you have to:
+  Make the source code available.
+  Copy the copiright and license notice.
+  Document your changes and release them under the same license. [Check it out](LICENSE) for more details
 
 If you like this project feel free to give a shoutout on twitter [@danybeam](https://twitter.com/danybeam)
 
