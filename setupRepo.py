@@ -133,7 +133,8 @@ def dartInit():
         r'/hub/pull_request_template.md',
         r'/CODE_OF_CONDUCT.md',
         r'/CONTRIBUTING.md',
-        r'/Templates/README.md'
+        r'/Templates/README.md',
+        r'/Templates/CHANGELOG.md'
     ]
     for f in files:
         out = f.replace(r'/Templates', r'')
