@@ -109,7 +109,7 @@ def dartInit():
         data["jobs"]["tag_release"]["steps"][1]["run"] = "dartdoc"
         data["jobs"]["tag_release"]["steps"][3]["with"]["root"] = r'./pubspec.yaml'
         data["jobs"]["tag_release"]["steps"][3]["with"][
-            "regex_pattern"] = r'^((0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)$'
+            "regex_pattern"] = r'((0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)'
 
     filename = cwd+r'/.github/workflows/dart_release.yml'
     os.makedirs(os.path.dirname(filename), exist_ok=True)
@@ -123,7 +123,8 @@ def dartInit():
                      r"void main(){",
                      "  test(\"first test\", () {",
                      r"    expect(true, false);",
-                     r"});"]
+                     r"});",
+                     r'}']
         f.writelines("%s\n" % l for l in dartTests)
 
     files = [

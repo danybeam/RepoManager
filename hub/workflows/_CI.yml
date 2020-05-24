@@ -34,7 +34,7 @@ jobs:
         with:
           paths: <#VERSION FILE#>
       - name: Abort if not match
-        if: steps.changed.outputs.matched != 'true'
+        if: ${{github.event_name != 'push' && steps.changed.outputs.matched != 'true'}}
         run: exit 1
       - name: Get dependencies
         run: <#INSTALL DEPENDENCIES COMMAND#>
