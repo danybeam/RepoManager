@@ -1,0 +1,15 @@
+name: "<#PROJECT NAME#>"
+version: 0.0.0
+
+description: "<#THING#>"
+homepage: "<#REPLACE THIS WITH REPO URL#>"
+
+environment:
+  sdk: ">=2.8.0 <3.0.0"
+
+dependencies:
+
+dev_dependencies:
+  test: ^1.14.3
+  mockito: ^4.1.1
+  test_coverage: ^0.4.1
