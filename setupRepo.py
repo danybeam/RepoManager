@@ -33,9 +33,10 @@ args = vars(parser.parse_args())
 root = args["in"] or args["inpath"]
 cwd = args["out"] or args["outpath"]
 
-if not actions[args["action"]][args["language"]]:
+if not (actions.get(args["action"], False)).get(args["language"], False):
     print(
-        "there is not an action recorded for that language\nIf you would like to see it done please open a ticket in the repo [PLACEHOLDER FOR LINK OF REPO]")
+        "there is not an action recorded for that language\nIf you would like to see it done please open a ticket in the repo https://github.com/danybeam/RepoManager/issues")
+    sys.exit()
 
 # workflows/*
 
