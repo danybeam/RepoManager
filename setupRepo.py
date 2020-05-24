@@ -133,7 +133,7 @@ def dartInit():
         r'/hub/pull_request_template.md',
         r'/CODE_OF_CONDUCT.md',
         r'/CONTRIBUTING.md',
-        r'/_README.md'
+        r'/_EADME.md'
     ]
     for f in files:
         os.makedirs(os.path.dirname(cwd+f.replace(
