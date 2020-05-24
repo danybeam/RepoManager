@@ -120,7 +120,6 @@ def dartInit():
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
         dartTests = [r"import 'package:test/test.dart';",
-                     r"import 'package:task_parser/task_parser.dart';",
                      r"void main(){",
                      "  test(\"first test\", () {",
                      r"    expect(true, false);",

@@ -12,6 +12,8 @@ on:
 
 jobs:
   test:
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
         os: [ubuntu-latest]
