@@ -133,13 +133,13 @@ def dartInit():
         r'/hub/pull_request_template.md',
         r'/CODE_OF_CONDUCT.md',
         r'/CONTRIBUTING.md',
-        r'/_EADME.md'
+        r'/Templates/README.md'
     ]
     for f in files:
-        os.makedirs(os.path.dirname(cwd+f.replace(
-            r'hub', r'.github')), exist_ok=True)
-        substituteStrings(root+f, cwd+f.replace(
-            r'hub', r'.github'), "Dart")
+        out = f.replace(r'/Templates', r'')
+        out = out.replace(r'hub', r'.github')
+        os.makedirs(os.path.dirname(cwd+out), exist_ok=True)
+        substituteStrings(root+f, cwd+out, "Dart")
 
 
 actions["init"]["dart"] = dartInit
